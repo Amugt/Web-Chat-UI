@@ -162,10 +162,11 @@ label {
 }
 
 .chats-list {
+    margin-top: 10px;
     padding-left: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     overflow-y: scroll;
 }
 
@@ -174,8 +175,8 @@ label {
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 20px;
-    max-height: 65px;
+    gap: 10px;
+    height: 65px;
 }
 
 .chat a {
@@ -210,7 +211,7 @@ label {
 
 .chat-info {
     float: left;
-    width: 70%;
+    width: 60%;
     color: var(--dark);
 }
 
@@ -240,15 +241,16 @@ label {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    color: var(--secondary-color);
+    color: var(--dark);
 }
 
 .profile-header {
-    height: 250px;
+    height: 220px;
 }
 
 .profile-card .back-arrow {
     align-self: flex-start;
+    margin-top: 5px;
     margin-left: 5px;
 }
 
@@ -300,16 +302,18 @@ label {
 }
 
 .chat-container {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--background-color);
 }
 
 .chat-header {
-    height: 15%;
+    background-color: var(--secondary-color);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
     padding: 5px 10px 5px;
     display: flex;
     flex-direction: row;
@@ -325,6 +329,7 @@ label {
 }
 
 .chat-header .back-arrow {
+    margin-left: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,12 +345,24 @@ label {
     font-size: smaller;
 }
 
-.chat-photo {
+.chat-pic {
+    margin-right: 30px;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--background-color);
+    padding: 1px 1px 1px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
-.chat-photo img {
+.chat-pic img {
+    border-radius: 50%;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -353,14 +370,15 @@ label {
 
 .chat-area {
     padding: 10px 7px;
+    margin-bottom: 70px;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 70%;
     gap: 5px;
     background-color: var(--background-color);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 45px;
 }
 
 .messages {
@@ -389,22 +407,96 @@ label {
     border-end-start-radius: 0px !important;
 }
 
-.write-message {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.message-photo {
+    max-width: 250px;
+    max-height: 400px;
 }
 
-.write-message input {
-    border-radius: 20px;
-    border: 1px solid var(--secondary-color);
-    padding-left: 40px;
-    width: 800%;
+.message-photo img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.photo-received {
+    align-self: flex-start;
+}
+
+.photo-sent {
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.write-message {
+    position: fixed;
+    bottom: 0px;
+    height: 60px;
+    background-color: var(--background-color);
+    border-top: 1px solid var(--secondary-color);
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 5px 5px 5px 5px;
+    align-items: center;
+}
+
+.write-message .file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.write-message svg {
+    width: 30px;
+    height: 30px;
+}
+
+.write-message label {
+    display: block;
+    position: relative;
+    width: 40px;
     height: 40px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 25px;
+    background: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+.write-message .text-input {
+    font-size: 20px;
+    outline: none;
+    border: none;
+}
+
+.send-btn {
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.send-btn svg {
+    height: 30px;
+    width: 30px;
 }

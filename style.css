@@ -128,9 +128,13 @@ label {
     font-weight: bold;
 }
 
-.account-setting svg {
-    width: 28px;
-    height: 28px;
+.account-setting {
+    padding-left: 10px;
+}
+
+i {
+    color: var(--dark);
+    font-size: 25px;
 }
 
 .search-chats {
@@ -138,6 +142,8 @@ label {
 }
 
 .search-chats input {
+    background-color: var(--background-color);
+    color: var(--dark);
     border-radius: 20px;
     border: 1px solid var(--secondary-color);
     padding-left: 40px;
@@ -149,12 +155,10 @@ label {
     -o-border-radius: 20px;
 }
 
-.search-chats svg {
+.search-chats i {
     position: absolute;
     padding-left: 13px;
-    padding-top: 10px;
-    height: 24px;
-    width: 24px;
+    padding-top: 8px;
 }
 
 .search-chats input:focus {
@@ -248,15 +252,10 @@ label {
     height: 220px;
 }
 
-.profile-card .back-arrow {
+.back-arrow {
     align-self: flex-start;
-    margin-top: 5px;
-    margin-left: 5px;
-}
-
-.profile-card .back-arrow svg {
-    height: 25px;
-    width: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .profile-pic {
@@ -371,6 +370,7 @@ label {
 .chat-area {
     padding: 10px 7px;
     margin-bottom: 70px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -412,7 +412,8 @@ label {
     max-height: 400px;
 }
 
-.message-photo img {
+.message-photo img,
+video {
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
@@ -451,9 +452,8 @@ label {
     position: absolute;
 }
 
-.write-message svg {
-    width: 30px;
-    height: 30px;
+.write-message i {
+    font-size: 32px;
 }
 
 .write-message label {
@@ -473,6 +473,8 @@ label {
 }
 
 .write-message .text-input {
+    background-color: var(--background-color);
+    color: var(--dark);
     font-size: 20px;
     outline: none;
     border: none;
@@ -496,7 +498,37 @@ label {
     -o-border-radius: 50%;
 }
 
-.send-btn svg {
-    height: 30px;
-    width: 30px;
+.themes div {
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+
+.themes button {
+    font-weight: bolder;
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    border-radius: 10px;
+    transition: 1.5s ease-in-out;
+    -webkit-transition: 1.5s ease-in-out;
+    -moz-transition: 1.5s ease-in-out;
+    -ms-transition: 1.5s ease-in-out;
+    -o-transition: 1.5s ease-in-out;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.themes .darkbtn {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.themes .whitebtn {
+    background-color: white;
+    color: black;
+    border-color: white;
+    display: none;
 }
